@@ -17,3 +17,14 @@
 .footer-compact .tenant-brand-logo{max-width:min(180px,30vw)!important;max-height:44px!important}
 .contact-data a,.footer-contact>a:not(.button){display:block;color:inherit;text-decoration:underline;text-underline-offset:4px;font-size:13px;margin-top:10px;overflow-wrap:anywhere}
 @media(max-width:800px){.brand{max-width:46vw}.brand>span{font-size:clamp(14px,4.3vw,19px)}.brand small{font-size:7px}.tenant-brand-logo{max-width:38vw!important;max-height:40px!important}.footer-compact .tenant-brand-logo{max-width:34vw!important;max-height:38px!important}}
+
+/* Brand artwork: preserve intrinsic proportions and original colors. */
+.header .tenant-brand-logo{width:auto!important;height:auto!important;max-width:min(210px,25vw)!important;max-height:58px!important;object-fit:contain!important;flex-shrink:0}
+.footer-compact .footer-logo .tenant-brand-logo{width:auto!important;height:auto!important;max-width:min(205px,43vw)!important;max-height:54px!important;object-fit:contain!important;background:#fff;padding:6px 9px;border-radius:4px}
+.brand>span[hidden],.footer-logo>span[hidden]{display:none!important}
+:root[data-brand-ready] .waterline span{background:var(--blue)}
+:root[data-brand-ready] .finder{background:var(--light-blue)}
+:root[data-brand-ready] .button.blue:hover{background:var(--brand-dark,var(--ink))}
+:root[data-brand-ready] .header-cta:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+:root[data-brand-ready] .header-cta{border-color:var(--blue)}
+@media(max-width:800px){.header .tenant-brand-logo{max-width:38vw!important;max-height:42px!important}.footer-compact .footer-logo .tenant-brand-logo{max-width:55vw!important;max-height:48px!important}}
