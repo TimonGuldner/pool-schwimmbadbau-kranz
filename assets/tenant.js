@@ -7,6 +7,32 @@
   document.title = `${cfg.name} · Poolbau in ${cfg.region} | Website-Konzept`;
   const description=$('meta[name="description"]');
   if(description) description.content=`Öffentlicher Website-Entwurf für ${cfg.name} aus ${cfg.region}. KI-Bildwelt und Poolfinder als Designkonzept von WEBIMPACT.`;
+  // Derive website accents from the supplied original logo; never recolor artwork.
+  const applyLogoPalette = img => {
+    try {
+      const canvas=document.createElement('canvas');canvas.width=96;canvas.height=96;
+      const ctx=canvas.getContext('2d',{willReadFrequently:true});if(!ctx)return;
+      const scale=Math.min(96/img.naturalWidth,96/img.naturalHeight);
+      ctx.drawImage(img,0,0,img.naturalWidth*scale,img.naturalHeight*scale);
+      const data=ctx.getImageData(0,0,96,96).data,bins=new Map();
+      for(let i=0;i<data.length;i+=4){
+        const [r,g,b,a]=data.subarray(i,i+4),hi=Math.max(r,g,b),lo=Math.min(r,g,b);
+        if(a<200||hi<45||lo>225||hi-lo<32)continue;
+        const key=[r,g,b].map(v=>Math.round(v/32)).join(',');
+        const v=bins.get(key)||[0,0,0,0];v[0]++;v[1]+=r;v[2]+=g;v[3]+=b;bins.set(key,v);
+      }
+      const top=[...bins.values()].sort((a,b)=>b[0]-a[0])[0];if(!top||top[0]<10)return;
+      const raw=top.slice(1).map(v=>Math.round(v/top[0]));
+      const lum=rgb=>rgb.map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0);
+      let accent=raw.slice();while(lum(accent)>.18)accent=accent.map(v=>Math.floor(v*.94));
+      const css=rgb=>'rgb('+rgb.join(',')+')';
+      const root=document.documentElement;
+      root.style.setProperty('--blue',css(accent));
+      root.style.setProperty('--brand-dark',css(accent.map(v=>Math.round(v*.78))));
+      root.style.setProperty('--light-blue',css(raw.map(v=>Math.round(v*.09+255*.91))));
+      root.dataset.brandReady='true';
+    } catch { /* Cross-origin logos retain the default accessible palette. */ }
+  };
   const renderBrand = anchor => {
     if(!anchor) return;
     anchor.setAttribute('aria-label',`${cfg.name} – Startseite`);
@@ -20,7 +46,10 @@
     }
     if(cfg.logo){
       const logo=document.createElement('img');
-      logo.className='tenant-brand-logo'; logo.src=cfg.logo; logo.alt=cfg.name; logo.decoding='async';
+      logo.className='tenant-brand-logo'; logo.alt=cfg.name; logo.decoding='async';
+      if(anchor.classList.contains('brand'))logo.addEventListener('load',()=>applyLogoPalette(logo),{once:true});
+      if(/^assets\/brand-logos\//.test(cfg.logo))logo.src='https://timonguldner.github.io/pool-schwimmbadbau-kranz/'+cfg.logo;else logo.src=cfg.logo;
+      if(logo.complete&&logo.naturalWidth&&anchor.classList.contains('brand'))applyLogoPalette(logo);
       logo.onerror=()=>{logo.remove();if(wordmark)wordmark.hidden=false;};
       anchor.prepend(logo);
       if(wordmark) wordmark.hidden=true;
