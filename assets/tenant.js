@@ -2,6 +2,7 @@
   const cfg = window.BETRIEB || {};
   if (!cfg.slug) return;
   const $ = (selector, root=document) => root.querySelector(selector);
+  const $$ = (selector, root=document) => Array.from(root.querySelectorAll(selector));
   const setText = (selector, value) => { const el=$(selector); if(el) el.textContent=value; };
   document.title = `${cfg.name} · Poolbau in ${cfg.region} | Website-Konzept`;
   const description=$('meta[name="description"]');
