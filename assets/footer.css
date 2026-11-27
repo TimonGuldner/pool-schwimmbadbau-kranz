@@ -1,0 +1,36 @@
+/* Compact footer: normal-sized identity, one contact action and grouped links. */
+.footer.footer-compact{padding:60px 0 24px}
+.footer-compact .footer-main{display:grid;grid-template-columns:1.2fr .75fr 1fr;gap:72px;padding-bottom:46px;align-items:start}
+.footer-compact .footer-logo{display:inline-flex;align-items:center;gap:12px;width:fit-content}
+.footer-compact .footer-logo svg{width:37px;height:31px;fill:none;stroke:#9bc7d1;stroke-width:2.2;flex-shrink:0}
+.footer-compact .footer-logo>span{display:block;font-size:29px;line-height:1.1;letter-spacing:.035em;color:#f2f6f2}
+.footer-compact .footer-logo small{display:block;margin-top:7px;font-size:8px;line-height:1.5;letter-spacing:.16em;color:#bdd1d4}
+.footer-compact .footer-identity>p{font-size:16px;line-height:1.8;color:#c8d9dc;margin-top:25px;letter-spacing:0}
+.footer-compact .footer-demo{display:block;font-size:11px;line-height:1.7;color:#a8c0c6;margin-top:20px;max-width:28ch}
+.footer-compact .footer-nav,.footer-compact .footer-contact{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.footer-compact h2{font-family:Manrope,Arial,sans-serif;font-size:12px;line-height:1.6;letter-spacing:.07em;font-weight:500;color:#a8c5ce;margin:0 0 19px;text-wrap:initial}
+.footer-compact .footer-nav>a{font-size:14px;line-height:1.8;color:#e2ecec;margin:0 0 9px;position:relative}
+.footer-compact .footer-nav>a:hover{color:white;text-decoration:underline;text-underline-offset:5px}
+.footer-compact .footer-contact>p{font-size:24px;line-height:1.35;letter-spacing:-.035em;color:#f2f6f2;max-width:20ch}
+.footer-compact .footer-contact .button{margin-top:21px;min-height:48px;padding:13px 21px;font-size:13px}
+.footer-compact .footer-contact>span{font-size:12px;line-height:1.7;color:#b4cbd0;margin-top:17px}
+.footer-compact .footer-contact>span+span{margin-top:4px}
+.footer-compact .footer-bottom{margin:0;padding-top:22px;border-top:1px solid #49616a;display:flex;justify-content:space-between;align-items:baseline;gap:24px;font-size:11px;line-height:1.7;color:#a8c0c7}
+.footer-compact .footer-bottom>div{display:flex;flex-wrap:wrap;align-items:baseline;gap:24px}
+.footer-compact .footer-bottom button,.footer-compact .footer-bottom a{font-size:11px;line-height:1.7;padding:0;background:none;color:inherit}
+.footer-compact .footer-bottom button:hover,.footer-compact .footer-bottom a:hover{color:#fff}
+@media(max-width:1100px){.footer-compact .footer-main{gap:42px;grid-template-columns:1.1fr .7fr 1fr}.footer-compact .footer-bottom>div{gap:18px}}
+@media(max-width:800px){.footer.footer-compact{padding:48px 0 105px}.footer-compact .footer-main{grid-template-columns:1fr 1fr;column-gap:44px;row-gap:35px;padding-bottom:34px}.footer-compact .footer-identity{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;column-gap:44px;align-items:start}.footer-compact .footer-logo{grid-column:1;grid-row:1}.footer-compact .footer-identity>p{grid-column:2;grid-row:1;margin:0;font-size:15px}.footer-compact .footer-demo{grid-column:1/-1;margin-top:18px;font-size:11px;max-width:none}.footer-compact h2{font-size:12px;margin-bottom:17px}.footer-compact .footer-contact>p{font-size:23px}.footer-compact .footer-bottom{flex-direction:column;align-items:flex-start;gap:15px}.footer-compact .footer-bottom>div{gap:18px 24px}}
+@media(max-width:480px){.footer.footer-compact{padding-top:40px}.footer-compact .footer-main{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:22px;row-gap:30px;padding-bottom:30px}.footer-compact .footer-identity{display:block}.footer-compact .footer-logo svg{width:33px;height:28px}.footer-compact .footer-logo>span{font-size:27px}.footer-compact .footer-logo small{font-size:7px}.footer-compact .footer-identity>p{font-size:15px;line-height:1.7;margin-top:20px}.footer-compact .footer-identity>p br{display:none}.footer-compact .footer-demo{font-size:10px;margin-top:12px}.footer-compact h2{font-size:11px;letter-spacing:.045em;margin-bottom:15px}.footer-compact .footer-nav>a{font-size:13px;margin-bottom:9px}.footer-compact .footer-contact>p{font-size:20px;line-height:1.35}.footer-compact .footer-contact .button{font-size:12px;padding:12px 13px;min-height:45px;white-space:normal;text-align:center;margin-top:18px}.footer-compact .footer-contact>span{font-size:10px;overflow-wrap:anywhere}.footer-compact .footer-bottom{font-size:10px;padding-top:20px;gap:13px}.footer-compact .footer-bottom>div{gap:12px 20px}.footer-compact .footer-bottom button,.footer-compact .footer-bottom a{font-size:10px}}
+
+@media(max-width:480px){
+.footer-compact .footer-main{grid-template-columns:1fr;row-gap:28px}
+.footer-compact .footer-nav{display:grid;grid-template-columns:1fr 1fr;column-gap:20px}
+.footer-compact .footer-nav h2{grid-column:1/-1}
+.footer-compact .footer-nav>a{font-size:14px}
+.footer-compact h2{font-size:12px}
+.footer-compact .footer-contact{border-top:1px solid #49616a;padding-top:25px}
+.footer-compact .footer-contact>p{font-size:24px;max-width:none}
+.footer-compact .footer-contact .button{font-size:13px;padding:13px 21px}
+.footer-compact .footer-demo,.footer-compact .footer-contact>span,.footer-compact .footer-bottom,.footer-compact .footer-bottom button,.footer-compact .footer-bottom a{font-size:12px}
+}

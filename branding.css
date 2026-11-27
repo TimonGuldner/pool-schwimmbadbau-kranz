@@ -1,0 +1,19 @@
+:root {
+  --paper: #f7f8f5;
+  --white: #ffffff;
+  --ink: #202d32;
+  --muted: #5c6b70;
+  --blue: #076989;
+  --light-blue: #e5f0f2;
+  --line: #d5dedf;
+}
+
+/* Host-routed company identities for the public design concepts. */
+.brand svg,.footer-logo svg{display:none}
+.brand{min-width:0;max-width:min(34vw,340px)}
+.brand>span{font-size:clamp(16px,1.8vw,25px);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{font-size:8px;letter-spacing:.12em}
+.tenant-brand-logo{display:block;width:auto!important;height:auto!important;max-width:min(190px,22vw)!important;max-height:48px!important;object-fit:contain!important;object-position:left center}
+.footer-compact .tenant-brand-logo{max-width:min(180px,30vw)!important;max-height:44px!important}
+.contact-data a,.footer-contact>a:not(.button){display:block;color:inherit;text-decoration:underline;text-underline-offset:4px;font-size:13px;margin-top:10px;overflow-wrap:anywhere}
+@media(max-width:800px){.brand{max-width:46vw}.brand>span{font-size:clamp(14px,4.3vw,19px)}.brand small{font-size:7px}.tenant-brand-logo{max-width:38vw!important;max-height:40px!important}.footer-compact .tenant-brand-logo{max-width:34vw!important;max-height:38px!important}}
