@@ -1,30 +1,30 @@
 :root {
-  --paper: #f7f8f5;
-  --white: #ffffff;
-  --ink: #202d32;
-  --muted: #5c6b70;
-  --blue: #076989;
-  --light-blue: #e5f0f2;
-  --line: #d5dedf;
+  --paper:#f8f7f3;
+  --white:#fff;
+  --ink:#173337;
+  --muted:#52676b;
+  --blue:#146b73;
+  --light-blue:#e3efec;
+  --line:#d4dfdc;
+  --brand-dark:#103e43;
 }
-
-/* Host-routed company identities for the public design concepts. */
-.brand svg,.footer-logo svg{display:none}
-.brand{min-width:0;max-width:min(34vw,340px)}
-.brand>span{font-size:clamp(16px,1.8vw,25px);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brand small{font-size:8px;letter-spacing:.12em}
-.tenant-brand-logo{display:block;width:auto!important;height:auto!important;max-width:min(190px,22vw)!important;max-height:48px!important;object-fit:contain!important;object-position:left center}
-.footer-compact .tenant-brand-logo{max-width:min(180px,30vw)!important;max-height:44px!important}
+/* Neutral editorial wordmark, consistent across the twenty preview sites. */
+.header .brand,.footer.footer-compact .footer-logo{min-width:0;align-items:center;text-decoration:none}
+.header .brand{max-width:min(36vw,380px);flex:0 1 auto;margin-right:auto}
+.header .brand svg,.footer.footer-compact .footer-logo svg,.tenant-brand-logo{display:none!important}
+.header .brand>.tenant-wordmark,.footer.footer-compact .footer-logo>.tenant-wordmark{display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-width:0;max-width:100%;white-space:normal;overflow:visible;text-overflow:clip;line-height:1.05;letter-spacing:0}
+.tenant-wordmark .tenant-wordmark-name{display:block;font-family:Manrope,Arial,sans-serif;font-size:clamp(20px,2.1vw,30px);font-weight:700;letter-spacing:-.055em;line-height:1.08;overflow-wrap:normal}
+.tenant-wordmark-long .tenant-wordmark-name{font-size:clamp(18px,1.75vw,25px)}
+.header .tenant-wordmark-name{color:var(--ink)}
+.header .tenant-wordmark small,.footer.footer-compact .tenant-wordmark small{display:block;font-size:9px;font-weight:600;letter-spacing:.14em;line-height:1.35;margin:0;white-space:normal;color:var(--blue)}
+.footer.footer-compact .tenant-wordmark .tenant-wordmark-name{color:#f7f7f1;font-size:clamp(22px,2.4vw,32px)}
+.footer.footer-compact .tenant-wordmark small{color:#a8d7ce}
+.footer.footer-compact{background:#15383d}
+body .waterline span{background:var(--blue)}
+body .finder{background:var(--light-blue)}
+body .button.blue:hover{background:var(--brand-dark)}
+.header .header-cta{border-color:var(--blue)}
+.header .header-cta:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
 .contact-data a,.footer-contact>a:not(.button){display:block;color:inherit;text-decoration:underline;text-underline-offset:4px;font-size:13px;margin-top:10px;overflow-wrap:anywhere}
-@media(max-width:800px){.brand{max-width:46vw}.brand>span{font-size:clamp(14px,4.3vw,19px)}.brand small{font-size:7px}.tenant-brand-logo{max-width:38vw!important;max-height:40px!important}.footer-compact .tenant-brand-logo{max-width:34vw!important;max-height:38px!important}}
-
-/* Brand artwork: preserve intrinsic proportions and original colors. */
-.header .tenant-brand-logo{width:auto!important;height:auto!important;max-width:min(210px,25vw)!important;max-height:58px!important;object-fit:contain!important;flex-shrink:0}
-.footer-compact .footer-logo .tenant-brand-logo{width:auto!important;height:auto!important;max-width:min(205px,43vw)!important;max-height:54px!important;object-fit:contain!important;background:#fff;padding:6px 9px;border-radius:4px}
-.brand>span[hidden],.footer-logo>span[hidden]{display:none!important}
-:root[data-brand-ready] .waterline span{background:var(--blue)}
-:root[data-brand-ready] .finder{background:var(--light-blue)}
-:root[data-brand-ready] .button.blue:hover{background:var(--brand-dark,var(--ink))}
-:root[data-brand-ready] .header-cta:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
-:root[data-brand-ready] .header-cta{border-color:var(--blue)}
-@media(max-width:800px){.header .tenant-brand-logo{max-width:38vw!important;max-height:42px!important}.footer-compact .footer-logo .tenant-brand-logo{max-width:55vw!important;max-height:48px!important}}
+@media(max-width:1100px){.header .brand{max-width:32vw}.header .demo-label{display:none}}
+@media(max-width:800px){.header .brand{max-width:75vw}.header .brand>.tenant-wordmark{gap:5px}.header .tenant-wordmark-name{font-size:clamp(20px,4.7vw,27px)}.header .tenant-wordmark-long .tenant-wordmark-name{font-size:clamp(18px,4.2vw,24px)}.header .tenant-wordmark small{font-size:8px;letter-spacing:.1em}.footer.footer-compact .tenant-wordmark .tenant-wordmark-name{font-size:25px}}
